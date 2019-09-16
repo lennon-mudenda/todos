@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha",
+    "test": "nyc mocha",
     "lint": "./node_modules/.bin/eslint",
-    "coverage": "istanbul cover _mocha */index.js -x"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -24,6 +24,7 @@
     "eslint-plugin-import": "^2.18.2",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
     "supertest": "^4.0.2"
   }
 }
